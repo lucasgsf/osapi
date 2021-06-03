@@ -1,7 +1,17 @@
 from django.db import models
+from datetime import date
 
+class CalculoAcao(models.Model):
+    # campos do modelo
+    vlRisco = models.FloatField()
+    dtInicio = models.DateField(default=date.today)
+    dtFim = models.DateField(default=date.today)
 
-class File(models.Model):
-    file = models.FileField(blank=False, null=False)
     def __str__(self):
-        return self.file.name
+        return self.vlRisco
+
+class Acao(models.Model):
+    nome = models.CharField(max_length=255)
+
+    def __str__(self):
+        return self.nome

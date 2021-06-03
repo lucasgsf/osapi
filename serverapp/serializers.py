@@ -1,7 +1,14 @@
 from rest_framework import serializers
-from .models import File
+from .models import *
 
-class FileSerializer(serializers.ModelSerializer):
+class AcaoSerializer(serializers.ModelSerializer):
     class Meta:
-        model = File
-        fields = "__all__"
+            model = Acao
+            fields = "__all__"
+
+class CalculoAcaoSerializer(serializers.ModelSerializer):
+    lstAcoes = AcaoSerializer(many=True)
+
+    class Meta:
+            model = CalculoAcao
+            fields = "__all__"

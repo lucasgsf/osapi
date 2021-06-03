@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import *
+from .views import CalculoAcaoView
 
 urlpatterns = [
-    path('', FileUploadView.as_view())
+    path('', CalculoAcaoView.as_view())
 ]
