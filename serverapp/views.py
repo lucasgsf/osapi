@@ -96,6 +96,7 @@ class CalculoAcaoView(APIView):
 
           # Finding the optimal portfolio
           rf = (calculo_serializer.data['vlRisco'] / 100) # risk factor
+
           optimal_risky_port = portfolios.iloc[((portfolios['Returns']-rf)/portfolios['Volatility']).idxmax()]
           optimal_risky_port
 
